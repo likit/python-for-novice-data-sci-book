@@ -18,3 +18,4 @@ def to_float(x):
 
 data[['Glucose', 'Triglyceride', 'HDL-C', 'Systolic', 'Diastolic']].apply(lambda x: x.map(to_float)).head()
 ```
+Comment: For this example, applymap should be used instead, so a new example should be used instead.
