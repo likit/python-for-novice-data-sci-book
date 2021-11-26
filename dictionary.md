@@ -129,3 +129,29 @@ d = {'b': 120, 'c': 450, 'd': 50}
 ชื่อไฟล์ registrant_count.py
 
 ```
+
+### Note
+
+นอกจาก dictionary แล้วเรายังสามารถใช้ defaultdict จาก collections module เพื่อเก็บข้อมูลได้ โดยเราสามารถกำหนดค่าตั้งต้นของ value ได้ เช่น
+
+
+```Python
+
+from collections import defaultdict
+
+d = defaultdict(int)  # default value is integer which is set to 0 by default
+
+d['x']  # returns 0, even though x is not a key
+
+d['y'] += 20
+d.get('y') == 20  # returns True
+
+```
+
+
+### แบบฝึกหัด
+
+- จากตัวอย่างในไฟล์ registrant_count.py จงใช้ defaultdict แทน dictionary
+
+- จากตัวอย่างในไฟล์ registrant_count.py จงใช้ defaultdict ในการเก็บข้อมูล email ในแต่ละ domain ไว้ใน list เดียวกัน
+
