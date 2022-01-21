@@ -75,6 +75,21 @@ def double_it(number:int) -> int:
 
 ดังนั้นการใช้ type hint ไม่ได้ป้องกันการป้อนข้อมูลผิดพลาดได้ แต่เป็นการเตือนนักพัฒนามากกว่า
 
+## Function is a first class citizen
+
+ในภาษา Python ฟังก์ชั่นถือว่าเป็น first class citizen หมายความว่าเราสามารถปฏิบัติต่อฟังก์ชั่นเสมือนกับ object อื่น ๆ ทั่วไป เช่น เราสามารถ assign ฟังก์ชั่นให้กับตัวแปรได้
+
+
+```Python
+def double_it(number: int)->int:
+  return number * 2
+  
+  
+times_two = double_it
+value = times_two(4)  # value will be 8.
+
+```
+
 ## หลักการเขียนฟังก์ชั่นที่ดี
 
 การสร้างฟังก์ชั่นที่ดีควรมีขนาดเล็ก ทำงานเฉพาะด้าน จึงจะเหมาะสมกับการทดสอบและการนำไปใช้งานได้หลากหลาย
