@@ -24,8 +24,14 @@ C: CCCCCC
 
 ```
 
-2. จงเขียนโปรแกรมให้คำนวณสัดส่วนเป็นร้อยละ (percent composition) ของ nucleotide แต่ละชนิด
+2. จงเขียนโปรแกรมให้คำนวณสัดส่วนเป็นร้อยละ (percent composition) ของ nucleotide แต่ละชนิดดังตัวอย่าง
 
+```
+A: AAAAAAAA 26.7%
+G: GGGGGGGGGGG 36.7%
+T: TTTTT 16.7%
+C: CCCCCC 20.0%
+```
 
 ## Data
 
