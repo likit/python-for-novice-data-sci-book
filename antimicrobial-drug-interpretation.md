@@ -1,13 +1,13 @@
-## ระดับความยาก
+## Level
 
 * intermediate
 
-## พื้นฐานความรู้ที่จำเป็น
+## Prerequisite
 
 * built-in data structure: dictionary, list
 * flow control: if else elif
 
-## ทักษะที่ต้องใช้
+## Skills required
 
 * สามารถออกแบบ data model ที่เหมาะสมได้โดยใช้ built-in data types
 * สามารถกำหนดเงื่อนไขที่ซับซ้อนได้
@@ -22,7 +22,7 @@
 
 หากการแปลผลขนาดความกว้างของ zone ที่อยู่ระหว่างค่ากำหนดเป็น intermediate จงเขียนโปรแกรมที่อ่านค่าชื่อยาและขนาดของโซนจากข้อมูลต่อไปนี้และแปลผลอย่างถูกต้อง
 
-## ข้อมูล
+## Data
 
 |Bacteria|Drug|Zone|
 |-------|------|------|
