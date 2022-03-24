@@ -1,3 +1,19 @@
+## Level
+
+* basic
+
+## Prerequisite
+
+* built-in data types
+* list indexing
+* functions: range, len
+* iteration
+
+## Skill required
+
+* สามารถอ่านข้อมูลจาก list ได้
+* สามารถเขียนโปรแกรมให้ประเมินเงื่อนไขทางตรรกศาสตร์ได้
+
 ## Problem
 
 1. จากข้อมูล จงเขียนโปรแกรมให้รายงานคนที่มีค่าความดันโลหิตสูง โดยใช้เกณฑ์ systolic >= 140 mmHg หรือ diastolic >= 90 mmHg
