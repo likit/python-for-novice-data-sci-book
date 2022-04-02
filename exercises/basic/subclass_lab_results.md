@@ -37,7 +37,7 @@
 
 ```Python
 
->>> res = LabResult(datetime.datetime.now(), '3400044', 101, 'gluc', 98, 'mg/dL', 'James')
+>>> res = LabResult(datetime.now(), '3400044', 101, 'gluc', 98, 'mg/dL', 'James')
 >>> res.print_result()
 98 mg/dL
 
@@ -46,8 +46,16 @@
 
 ```Python
 
->>> res = PCRResult(datetime.datetime.now(), '3400044', 102, 'COVID RT-PCR', 27, 'Ct', 'detected', 'James')
+>>> res = PCRResult(datetime.now(), '3400044', 102, 'COVID RT-PCR', 27, 'Ct', 'detected', 'James')
 >>> res.print_result()
 27 Ct => detected
 
+```
+
+## Hints
+
+เมื่อต้องการเรียกใช้วันที่ ให้ import datetime ก่อนดังนี้
+
+```Python
+>>>from datetime import datetime
 ```
