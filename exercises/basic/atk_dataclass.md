@@ -1,4 +1,19 @@
-จงเขียนโปรแกรมเพื่อสร้างชนิดของข้อมูลโดยใช้ data class เพื่อจัดเก็บข้อมูลการตรวจ ATK โดยใช้ฟิลด์ข้อมูลต่อไปนี้
+## Level
+
+* basic
+
+## Prerequisite
+
+* built-in data types
+* data classes
+
+## Skill required
+
+* สามารถสร้าง data class ได้
+
+## Problem
+
+จงเขียนโปรแกรมเพื่อสร้างชนิดของข้อมูลโดยใช้ data class ชื่อว่า ATKResult เพื่อจัดเก็บข้อมูลการตรวจ ATK โดยใช้ฟิลด์ข้อมูลต่อไปนี้
 
 * วันที่ทดสอบ
 * ชื่อผู้ป่วย
@@ -14,7 +29,7 @@
 |risk|bool||
 |vaccination|int|0|
 
-โดยทดสอบการสร้่าง data class ด้วย code ต่อไปนี้
+โดยทดสอบการสร้าง data class ด้วย code ต่อไปนี้
 
 ```Python
 
