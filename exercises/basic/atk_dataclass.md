@@ -32,13 +32,15 @@
 โดยทดสอบการสร้าง data class ด้วย code ต่อไปนี้
 
 ```Python
+>>>from datetime import datetime
+>>>res = ATKResult(datetime.now(), 'John Doe', 'positive', False)
+>>>print(res.patient_name)
+John Doe
+>>>print(res.result)
+positive
 
-res = ATKResult(datetime.datetime.now(), 'John Doe', 'positive', False)
-print(res.patient_name)
-print(res.result)
-
-if res.risk and res.result == 'negative':
-  print('You should stay home for at least 7 days.'
+>>>if res.risk and res.result == 'negative':
+      print('You should stay home for at least 7 days.'
 
 ```
 
@@ -48,6 +50,6 @@ if res.risk and res.result == 'negative':
 
 ```Python
 
-from datetime import datetime
+>>>from datetime import datetime
 
 ```
