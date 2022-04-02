@@ -39,7 +39,7 @@
 
 >>> res = LabResult(datetime.datetime.now(), '3400044', 101, 'gluc', 98, 'mg/dL', 'James')
 >>> res.print_result()
-'98 mg/dL'
+98 mg/dL
 
 ```
 2. จงสร้าง subclass ของ LabResult เพื่อใช้บันทึกผลการตรวจ RT-PCR เพื่อให้สามารถแสดงผลค่า Ct และการแปลผลได้ดังตัวอย่าง
@@ -48,6 +48,6 @@
 
 >>> res = PCRResult(datetime.datetime.now(), '3400044', 102, 'COVID RT-PCR', 27, 'Ct', 'detected', 'James')
 >>> res.print_result()
-'27 Ct => detected'
+27 Ct => detected
 
 ```
