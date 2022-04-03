@@ -16,7 +16,7 @@
 
 ## Problem
 
-1. จากข้อมูลที่ให้ จงสร้าง class เพื่อรับค่าตั้งต้นเป็น nuceotide sequence และสร้าง method get_composition() เพื่อคำนวณหา percent composition ของ nucleotide ใน sequence และเมื่อใช้คำสั่ง str() กับ instance ของ class นี้ให้แสดงผลดังด้านล่าง ทั้งนี้ลำดับของแถวสามารถสลับที่ได้
+1. จากข้อมูลที่ให้ จงสร้าง class เพื่อรับค่าตั้งต้นเป็น nuceotide sequence และสร้าง method composition() เพื่อคำนวณหา percent composition ของ nucleotide ใน sequence และเมื่อใช้คำสั่ง str() กับ instance ของ class นี้ให้แสดงผลดังด้านล่าง ทั้งนี้ลำดับของแถวสามารถสลับที่ได้
 
 ```
 A: AAAAAAAA 26.7%
