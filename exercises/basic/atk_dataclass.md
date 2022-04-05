@@ -38,9 +38,11 @@
 John Doe
 >>>print(res.result)
 positive
+>>>print(res.vaccination)
+0
 
 >>>if res.risk and res.result == 'negative':
-      print('You should stay home for at least 7 days.'
+      print('You should stay home for at least 7 days.')
 
 ```
 
