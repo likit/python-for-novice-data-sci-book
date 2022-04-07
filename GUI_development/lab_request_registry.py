@@ -1,3 +1,10 @@
+"""You will need to install the following libraries:
+- PySimpleGUI
+- openpyxl
+
+"""
+
+
 import PySimpleGUI as sg
 import os
 from openpyxl import Workbook, load_workbook
