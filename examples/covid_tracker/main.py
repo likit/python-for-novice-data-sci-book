@@ -8,28 +8,27 @@ from datetime import datetime
 url = 'https://covid19.ddc.moph.go.th/api/Cases/round-1to2-by-provinces'
 
 
-def load_data():
+def download_data():
     resp = requests.get(url)
-    data = json.loads(resp.text)  # resp.text is a csv text in JSON format
-    df = pd.DataFrame(data)
-    return df
+    data = json.loads(resp.text)
+    return pd.DataFrame(data)
 
 
-def to_file(format, df, split, filename):
-    print_func = getattr(df, 'to_excel') if format == 'xlsx' else getattr(df, 'to_csv')
-    if not split:
-        print_func(f'{filename}.{format}', index=False)
-    else:
-        provinces = df.head()['province'].unique()
-        folder_name = datetime.now().strftime('%Y%m%d')
+def to_file(df, split, format, filename):
+    folder_name = datetime.now().strftime('%Y%m%d')
+    if split:
         if not os.path.exists(folder_name):
             os.mkdir(folder_name)
+
+        provinces = df['province'].unique()
         for p in provinces:
-            click.echo('save data from {} to a file..'.format(p))
-            df = df[df['province'] == p].head()
-            print_func = getattr(df, 'to_excel') if format == 'xlsx' else getattr(df, 'to_csv')
+            flt_df = df[df['province'] == p]
+            write_func = getattr(flt_df, 'to_excel') if format == 'xlsx' else getattr(flt_df, 'to_csv')
             file_path = os.path.join(folder_name, f'{p}.{format}')
-            print_func(file_path, index=False)
+            write_func(file_path, index=False)
+
+    write_func = getattr(df, 'to_excel') if format == 'xlsx' else getattr(df, 'to_csv')
+    write_func(f'{filename}.{format}', index=False)
 
 
 @click.group()
@@ -38,38 +37,36 @@ def main():
 
 
 @main.command()
-@click.option('--dry', is_flag=True, default=False)
+@click.option('--dry', is_flag=True)
 @click.option('--all/--head', default=False)
-@click.argument('provinces', nargs=-1)  # takes a variable number of provinces
-@click.pass_context
-def display(ctx, provinces, all, dry):
+@click.argument('provinces', nargs=-1)  # variable number of provinces
+def display(all, provinces, dry):
     if dry:
         if provinces:
-            click.echo('Only data from {} are downloaded.'.format(','.join(provinces)))
+            click.echo('Displaying data from {}'.format(','.join(provinces)))
         else:
-            click.echo('All data are downloaded.')
+            click.echo('Data from all provinces will be displayed.')
         return
-
-    df = load_data()
+    df = download_data()
     if provinces:
         flt_df = df[df['province'].isin(provinces)]
-        if not all:
-            flt_df = flt_df.head()
     else:
-        if not all:
-            flt_df = df.head()
-    click.echo(flt_df)
+        flt_df = df
+    if all:
+        print(flt_df)
+    else:
+        print(flt_df.head())
 
 
 @main.command()
+@click.option('--split', is_flag=True)
+@click.option('--filename', type=str, default='demo')
 @click.option('-f', '--format', type=click.Choice(['xlsx', 'csv'], case_sensitive=False), default='xlsx')
-@click.option('--split', is_flag=True, default=False)
-@click.argument('filename', default='data', type=str)
-def save(filename, format, split):
-    df = load_data()
-    click.echo('saving to {}.'.format(format))
-    to_file(format, df, split, filename)
+def save(split, format, filename):
+    df = download_data()
+    to_file(df, split, format, filename)
 
 
+# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     main()
