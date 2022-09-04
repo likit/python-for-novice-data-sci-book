@@ -1,3 +1,3 @@
 # Basic Python
 
-* [basic data types]()
+* [basic data types](data-types.ipynb)
