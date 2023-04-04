@@ -7,8 +7,8 @@
 
 ```Python
 
-d = dict()  # using the dict medthod
-d = {}  # using a literal form
+d = dict()  # the built-in dict function
+d = {}  # a literal form
 
 d = dict(a=32, b=45, c='Mazda')
 d = {'a': 32, 'b': 45, c: 'Mazda'}
@@ -25,7 +25,7 @@ d = dict([('a', 32), ('b', 45), ('c', 'Mazda')])
 
 การเรียกดูข้อมูลสามารถทำได้หลายวิธีได้แก่
 
-การเรียกดูข้อมูลด้วยวิธี indexing
+การเรียกดูข้อมูลด้วย key indexing
 
 ```Python
 
@@ -68,7 +68,7 @@ a.update(b)  # a is now {'a': 23, 'b': 45, 'c': 450, 'd': 50, 'x': 100}
 
 ```
 
-ข้อควรระวัง key ใน dictionary จะเรียงแบบสุ่มแม้ว่าบางครั้งจะเหมือนว่าเรียงอย่างมีระบบก็ตาม
+ข้อควรระวัง key ใน dictionary จะไม่เรียงตามตัวอักษรหรือตัวเลขแม้ว่าบางครั้งจะเหมือนว่าเรียงอย่างมีระบบก็ตาม
 
 
 การนับจำนวนรายการใน dictionary สามารถทำได้โดยใช้ **len** function
